@@ -1,5 +1,6 @@
 var React = require('react');
 var PropTypes = require('prop-types');
+var api = require('../utils/api');
 
 class Search extends React.Component {
 
@@ -25,7 +26,8 @@ class Search extends React.Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        console.log(this.state.city);
+        console.log(api.fetchCurrentForecast(this.state.city));
+        console.log(api.fetchFiveDayForecast(this.state.city));
     }
 
     render() {
