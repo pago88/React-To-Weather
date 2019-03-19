@@ -1,4 +1,5 @@
 var React = require('react');
+var Search = require('./Search');
 
 class Home extends React.Component {
     render() {
@@ -6,17 +7,7 @@ class Home extends React.Component {
             <div className='homeContainer'>
                 <div className = 'homeContainer' style={{backgroundImage: "url('app/images/pattern.svg')"}}>
                     <h1>Enter a City and State</h1>
-                    <input
-                        placeholder='Austin, TX'
-                        type='text'
-                        autoComplete='off'
-                    />
-                    <button
-                        className='button'
-                        type='submit'>
-                            Get Weather
-                    </button>
-
+                    <Search orientation='column' />
                 </div>
             </div>
         )

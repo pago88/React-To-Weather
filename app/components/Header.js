@@ -1,25 +1,17 @@
 var React = require('react');
+var Search = require('./Search');
 
 class Header extends React.Component {
     render () {
         return (
             <div className='navbar'>
-                <h2>Header</h2>
-                <div className='header-container'>
-                    <input
-                        placeholder='Austin, TX'
-                        type='text'
-                        autoComplete='off'
-                    />
-                    <button
-                        className='button'
-                        type='submit'>
-                            Get Weather
-                    </button>
-                </div>
+                <h1>React to Weather</h1>
+                <Search orientation='row' />
             </div>
         )
     }
 }
+
+
 
 module.exports = Header;

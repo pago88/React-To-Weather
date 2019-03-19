@@ -26,10 +26,23 @@ body {
 }
 
 .navbar {
-    background: orange;
+    color: #fff;
+    background: rgb(250, 109, 77);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
 }
 
-.header-container {
+.row {
     display: flex;
-    justify-content: flex-end
+    justify-content: flex-end;
 }
+
+.column {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    align-items: center;
+}
+
