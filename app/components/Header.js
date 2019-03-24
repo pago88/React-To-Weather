@@ -6,7 +6,9 @@ class Header extends React.Component {
         return (
             <div className='navbar'>
                 <h1>React to Weather</h1>
-                <Search orientation='row' />
+                <Search 
+                    orientation='row'
+                />
             </div>
         )
     }

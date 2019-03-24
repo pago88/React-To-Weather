@@ -1,6 +1,7 @@
 var React = require('react');
 var PropTypes = require('prop-types');
 var api = require('../utils/api');
+var Redirect = require('react-router-dom').Redirect;
 
 class Search extends React.Component {
 
@@ -8,7 +9,8 @@ class Search extends React.Component {
         super(props);
 
         this.state = {
-            city : ''
+            city : '',
+            toForecast: false
         }
 
         this.handleChange = this.handleChange.bind(this);
@@ -26,12 +28,25 @@ class Search extends React.Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        console.log(api.fetchCurrentForecast(this.state.city));
-        console.log(api.fetchFiveDayForecast(this.state.city));
+
+        this.setState(function () {
+            return {
+                toForecast: true
+            }
+        });
     }
 
     render() {
-
+        if (this.state.toForecast === true) {
+            return (
+                <Redirect 
+                    to= {{
+                        pathname: '/forecast',
+                        search: 'city=' + this.state.city
+                    }}
+                />
+            )
+        }
         return (
             <form onSubmit={this.handleSubmit} className={this.props.orientation === 'row' ? 'row' : 'column'}>
                 <input
